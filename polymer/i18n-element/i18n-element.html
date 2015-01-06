@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<script src="../../bower_components/i18next/i18next.js"></script>
+
+<polymer-element name="i18n-element">
+	<template>
+		<template if="{{translationLoaded}}">
+			<content></content>
+		</template>
+		<template if="{{!translationLoaded}}">
+			<div>
+				Please wait while translations are loading...
+			</div>
+
+		</template>
+
+	</template>
+	<script>
+/*global i18n,Polymer,PolymerExpressions, window */
+"use strict";
+PolymerExpressions.prototype._ = function (args) {
+	console.log("_(", args, "), ", i18n.t(args));
+	return i18n.t(args);
+};
+
+window._ = i18n.t;
+
+Polymer('i18n-element', {
+	translationLoaded: false,
+	created: function () {
+		var i18nElement = this;
+		i18n.init({
+			lng: "en",
+			getAsync: false
+		}, function (t) {
+			console.log('i18n initialized', i18n.t('Hello'));
+			i18nElement.translationLoaded = true;
+		});
+	}
+
+});
+</script>
+</polymer-element>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<link rel="import" href="polymer/i18n-element/i18n-element.html" />
+		<link rel="import" href="polymer/my-element/my-element.html" />
+
+	</head>
+	<body>
+		<i18n-element>
+			<my-element></my-element>
+			<template is="auto-binding">
+				Inline content: {{_('Hello')}}.
+			</template>
+		</i18n-element>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "i18-tests",
+  "version": "0.0.0",
+  "authors": [
+    "Pascal LE QUANG <pascal.lequang@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.2",
+    "jquery": "~2.1.3"
+  }
+}
